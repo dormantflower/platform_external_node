@@ -36,7 +36,7 @@ $(LOCAL_BUILT_MODULE_PATH):
 $(LOCAL_BUILT_MODULE): $(LOCAL_BUILT_MODULE_PATH)
 	@( \
 	  cd $(node_PATH) && \
-	  ./android-configure ~/.mozbuild/android-ndk-r11b $(TARGET_ARCH) && \
+	  ./android-configure $(B2G_ANDROID_NDK_PATH) $(TARGET_ARCH) && \
 	  $(MAKE) && \
 	  cp out/Release/node $(abspath $@) \
 	 ) || exit $?
